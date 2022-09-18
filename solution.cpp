@@ -171,7 +171,7 @@ static inline int get_best_machine(const pair<int, int>* edge,
 }
 
 
-static inline void put_one_edge(const pair<int, int>* edge,
+static inline void put_one_edge(pair<int, int>* edge,
     int machine_id,
     int machine_num,
     bool src_not_exist,
@@ -180,7 +180,7 @@ static inline void put_one_edge(const pair<int, int>* edge,
     vector<pair<int, int>*>& result)
 {
     // 1.插入边
-    result.emplace_back(edge);
+    result.push_back(edge);
 
     // 2.更新计算时间和更新内存
     machines[machine_id].acc_cal_time += machines[machine_id].edge_cost;
